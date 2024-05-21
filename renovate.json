@@ -7,5 +7,21 @@
     "fileMatch": [
       "\\.yaml$"
     ]
-  }
+  },
+  "regexManagers": [
+    {
+      "fileMatch": ["clusters/.*\\.yaml$"],
+      "matchStrings": [
+        "image:\\s(?<depName>\\S+):(?<currentValue>\\S+)"
+      ],
+      "datasourceTemplate": "docker"
+    },
+    {
+      "fileMatch": ["monitoring/controllers/.*\\.yaml$"],
+      "matchStrings": [
+        "image:\\s(?<depName>\\S+):(?<currentValue>\\S+)"
+      ],
+      "datasourceTemplate": "docker"
+    }
+  ]
 }
